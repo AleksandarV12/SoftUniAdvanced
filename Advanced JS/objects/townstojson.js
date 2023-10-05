@@ -25,7 +25,7 @@ function townsToJSON(input) {
     });
   }
 
-  console.log(JSON.stringify(towns));
+  return JSON.stringify(towns);
 }
 townsToJSON([
   "| Town | Latitude | Longitude |",
