@@ -6,8 +6,8 @@ function attachEventsListeners() {
     button.addEventListener("click", onClickHandler)
   );
   function onClickHandler(event) {
-    let value = Number(event.target.parentElement.children[1].value);
-    let unit = event.target.parentElement.children[1].id;
+    let value = Number(event.targetRef.parentElement.children[1].value);
+    let unit = event.targetRef.parentElement.children[1].id;
     switch (unit) {
       case "days":
         propagateValue(value);

@@ -10,7 +10,7 @@ function create(words) {
     divRef.addEventListener("click", onClickHandler);
   }
   function onClickHandler(e) {
-    let divRef = e.currentTarget;
+    let divRef = e.currenttargetRef;
     let pRef = divRef.children[0];
     pRef.style.display = "block";
   }

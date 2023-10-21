@@ -5,19 +5,19 @@ function solve() {
   const lastNameInputEl = document.getElementById("last-name");
   const ageInputEl = document.getElementById("age");
   const genderInputEl = document.getElementById("genderSelect");
-  const dishDescriptionInputEl = document.getElementById("task");
+  const dishmyDescriptionInputRefEl = document.getElementById("task");
   const submitBtnEl = document.getElementById("form-btn");
   const inProgressUlEl = document.getElementById("in-pro");
 
   submitBtnEl.addEventListener("click", addDish);
 
   function createInProgressEl() {
-    const listItemEl = document.createElement("Li");
-    listItemEl.className = "each-line";
+    const myListItemEl = document.createElement("Li");
+    myListItemEl.className = "each-line";
     const articleEl = document.createElement("article");
     const headingEl = document.createElement("h4");
     const genderAndAgeEl = document.createElement("p");
-    const dishDescriptionEl = document.createElement("p");
+    const dishmyDescriptionEl = document.createElement("p");
 
     const editBtnEl = document.createElement("button");
     editBtnEl.textContent = "Edit";
@@ -30,33 +30,33 @@ function solve() {
 
     headingEl.textContent = `${firstNameInputEl.value} ${lastNameInputEl.value}`;
     genderAndAgeEl.textContent = `${genderInputEl.value} ${ageInputEl.value}`;
-    dishDescriptionEl.textContent = `Dish description ${dishDescriptionInputEl.value}`;
+    dishmyDescriptionEl.textContent = `Dish myDescription ${dishmyDescriptionInputRefEl.value}`;
 
     articleEl.appendChild(headingEl);
     articleEl.appendChild(genderAndAgeEl);
-    articleEl.appendChild(dishDescriptionEl);
+    articleEl.appendChild(dishmyDescriptionEl);
     articleEl.appendChild(editBtnEl);
     articleEl.appendChild(completeBtnEl);
-    listItemEl.appendChild(articleEl);
+    myListItemEl.appendChild(articleEl);
 
-    return listItemEl;
+    return myListItemEl;
   }
 
   function editDish() {
-    console.log(e.target.parentNode);
+    console.log(e.targetRef.parentNode);
   }
 
   function addDish(e) {
-    const listItemEl = createInProgressEl();
-    // inProgressUlEl.appendChild(listItemEl);
-    clearInputFields();
+    const myListItemEl = createInProgressEl();
+    // inProgressUlEl.appendChild(myListItemEl);
+    removeInputs();
   }
 }
 
-function clearInputFields() {
+function removeInputs() {
   firstNameInputEl.value = "";
   lastNameInputEl.value = "";
   ageInputEl.value = "";
   genderInputEl.value = "";
-  dishDescriptionInputEl.value = "";
+  dishmyDescriptionInputRefEl.value = "";
 }
